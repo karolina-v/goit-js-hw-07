@@ -2,7 +2,7 @@ import { galleryItems } from './gallery-items.js';
 
 const galleryEl = document.querySelector('.gallery');
 
-galleryEl.addEventListener('click', onImageClick);
+// galleryEl.addEventListener('click', onImageClick);
 
 
 function createImageCards (galleryItems) {
@@ -22,12 +22,12 @@ galleryEl.insertAdjacentHTML('beforeend', createImageCards(galleryItems));
 
 
 
-function onImageClick(e) {
-    e.preventDefault();
+// function onImageClick(e) {
+//     e.preventDefault();
 
-    if (e.target.nodeName !== 'IMG') {
-        return;
-    }
+//     if (e.target.nodeName !== 'IMG') {
+//         return;
+//     }
 
     const lightbox = new SimpleLightbox('.gallery a', {
         'captionType': 'atr',
@@ -38,5 +38,5 @@ function onImageClick(e) {
     });
 
     
-}
+// }
  

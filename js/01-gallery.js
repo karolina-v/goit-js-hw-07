@@ -33,7 +33,6 @@ function onImageClick(e) {
 
     const imageLink = e.target.dataset.source;
     const imageDescription = e.target.alt;
-    const imageToLightbox = `<img src ='${imageLink}', alt='${imageDescription}'>`;
     
     const options = {
 onShow: () => {window.addEventListener("keydown", onCloseEscape);
@@ -43,14 +42,14 @@ onClose: () => {window.removeEventListener("keydown", onCloseEscape);
     }
 
    
-    const instance = basicLightbox.create(imageToLightbox, `${options}`);
+    const instance = basicLightbox.create(`<img src ='${imageLink}', alt='${imageDescription}'>`, options);
+
     instance.show();
 
     function onCloseEscape(e) {
         if (e.code === 'Escape') {
-            instance.close(options.onClose);
+            instance.close();
         }
-         instance.show(options.onShow);
     }
     
 }
